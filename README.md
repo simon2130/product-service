@@ -69,7 +69,7 @@ Response: `200 OK`
 ### 2. Get product by ID
 
 ```
-GET /api/v1/products/{id}
+GET /api/v1/products/{ID}
 ```
 
 * `200 OK` → if found
@@ -184,6 +184,7 @@ Validation is applied on **ProductRequest DTO**:
 ```
 http://localhost:8080/swagger-ui.html
 ```
+![](images/swagger.png)
 
 ### OpenAPI JSON:
 
@@ -233,7 +234,7 @@ mvn test
 
 ```
 BUILD SUCCESS
-Tests run: 8, Failures: 0
+Tests run: 12, Failures: 0
 ```
 
 ---
@@ -243,12 +244,20 @@ Tests run: 8, Failures: 0
 Tests include:
 
 * GET all products → 200
+![](images/1.getallproduct.png)
 * GET by ID → 200 / 404
-* POST → 201
+![](images/2.getproductbyID.png)
+![](images/3.getproductbyinvalidID.png)
+* POST → 201 / 400
+![](images/4.createproduct1.png)
+![](images/5.createproduct2.png)
 * PUT → 200
-* DELETE → 204
+![](images/7.updatewithnewvalue.png)
+* DELETE → 204 / 404
+![](images/8.deleteexistingproduct.png)
+![](images/9.deletenonexistentproduct.png)
 * Validation errors → 400
-
+![](images/6.createproductbyblankname.png)
 ---
 
 ## Postman Collection
